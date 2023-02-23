@@ -8,6 +8,19 @@ Click on the following links to see installation instructions for each chart:
 - [buildbuddy-enterprise](charts/buildbuddy-enterprise/)
 - [buildbuddy-executor](charts/buildbuddy-executor/)
 
+## Deployment to dev environment
+
+```shell
+git clone https://github.com/gradle/buildbuddy-helm
+cd buildbuddy-helm/charts/buildbuddy
+helm install my-release \
+  --set image.tag=server-image-v1.3.1 \
+  --set mysql.mysqlUser=sampleUser \
+  --set mysql.mysqlPassword=samplePassword \
+  --set disk.data.storageClass=gp3 \
+  .
+```
+
 ## Usage
 
 [Helm](https://helm.sh) must be installed and initialized to use the charts.
